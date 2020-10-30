@@ -1,4 +1,6 @@
 import random, re
+import pickle
+from tqdm import tqdm
 
 SEP = " "  # token separator symbol
 
@@ -58,8 +60,8 @@ def preprocess_corpus(filename):
     # s = open(filename, 'r').read()
     s = ''
     import pandas as pd
-    df = pd.read_csv('poems.csv')
-    for index, row in df.iterrows():
+    df = pd.read_csv(filename)
+    for index, row in tqdm(df.iterrows(), total=df.shape[0]):
         s = s + row['text'].replace('\r', '').replace('\n', '')
 
     s = re.sub('[()]', r'', s)  # remove certain punctuation chars
@@ -71,28 +73,56 @@ def preprocess_corpus(filename):
 
 def postprocess_output(s):
     s = re.sub('\\s+([.,!?])\\s*', r'\1 ', s)  # correct whitespace padding around punctuation
-    s = s.capitalize();  # capitalize first letter
+    s = s.capitalize()  # capitalize first letter
     s = re.sub('([.!?]\\s+[a-z])', lambda c: c.group(1).upper(), s)  # capitalize letters following terminated sentences
     return s
 
 
-def gengram_sentence(corpus, N=3, sentence_count=5, start_seq=None):
+def gengram_sentence(model, N=3, sentence_count=15, start_seq=None):
     """ Generate a random sentence based on input text corpus """
 
-    ngrams = make_ngrams(corpus.split(SEP), N)
-    counts = ngram_freqs(ngrams)
+    counts = model
 
-    if start_seq is None: start_seq = random.choice(counts.keys());
+    if start_seq is None:
+        start_seq = random.choice(model.keys())
     rand_text = start_seq.lower()
 
     sentences = 0
     while sentences < sentence_count:
         rand_text += SEP + next_word(rand_text, N, counts)
-        sentences += 1 if rand_text.endswith(('.', '!', '?')) else 0
 
+        if rand_text.endswith((',', '.', '!', '?')):
+            rand_text = rand_text + '\n\n'
+            sentences += 1
+
+    print(rand_text)
     return postprocess_output(rand_text)
 
 
+def save_ngram_model(ngram_freqs, pkl_file):
+    with open(pkl_file, 'wb') as output:
+        pickle.dump(ngram_freqs, output, pickle.HIGHEST_PROTOCOL)
+
+
+def load_ngram_model(pkl_file):
+    with open(pkl_file, 'rb') as input:
+        ngram_model = pickle.load(input)
+    return ngram_model
+
+
+def train_ngram_model(corpus_file, pkl_file, N=3):
+    corpus = preprocess_corpus(corpus_file)
+
+    ngrams = make_ngrams(corpus.split(SEP), N)
+    ngram_model = ngram_freqs(ngrams)
+    save_ngram_model(ngram_model, pkl_file)
+
+    return ngram_model
+
+
 if __name__ == "__main__":
-    corpus = preprocess_corpus("poems.csv")
-    print(gengram_sentence(corpus, start_seq="Today we"))
+    # ngram_model = train_ngram_model("ts_lyrics_train.csv", "ts_model_lyrics.pkl", 3)
+
+    model = load_ngram_model('ts_model_lyrics.pkl')
+    input = 'we will never get back together'
+    print(gengram_sentence(model, sentence_count=15, start_seq=input))

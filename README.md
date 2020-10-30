@@ -5,3 +5,6 @@ https://towardsdatascience.com/49-years-of-lyrics-why-so-angry-1adf0a3fa2b4
 https://github.com/johnwmillr/LyricsGenius
 
 https://github.com/enricobacis/lyricwikia
+
+ngram text generator
+https://github.com/errollw/gengram
