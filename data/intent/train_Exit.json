@@ -1,0 +1,43 @@
+{
+  "Exit": [
+    {
+      "data": "Exit"
+    },
+	{
+      "data": "Leave"
+    },
+	{
+      "data": "Exit please"
+    },
+	{
+      "data": "Leave please"
+    },
+	{
+      "data": "Please exit"
+    },
+	{
+      "data": "Please leave"
+    },
+	{
+      "data": "I want to leave"
+    },
+	{
+      "data": "I would like to exit"
+    },
+	{
+      "data": "Clear"
+    },
+	{
+      "data": "I want to exit"
+    },
+	{
+      "data": "I want to leave"
+    },
+	{
+      "data": "Restart"
+    },
+	{
+      "data": "Cancel"
+    }
+  ]
+}
