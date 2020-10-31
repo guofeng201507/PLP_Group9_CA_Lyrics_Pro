@@ -1,0 +1,64 @@
+{
+  "MatchSong": [
+    {
+      "data": "Find similar songs for me"
+    },
+	{
+      "data": "Find a similar song for me"
+    },
+	{
+      "data": "Please find a close song for me"
+    },
+	{
+      "data": "I want to find a similar song by song name"
+    },
+	{
+      "data": "Match a song"
+    },
+	{
+      "data": "Match songs"
+    },
+	{
+      "data": "Match song"
+    },
+	{
+      "data": "Match similar songs"
+    },
+	{
+      "data": "Search song by song name"
+    },
+	{
+      "data": "Search songs by its similar song"
+    },
+	{
+      "data": "I would like to get a similar song"
+    },
+	{
+      "data": "Get the song names for me"
+    },
+	{
+      "data": "Search the name of similar songs for me"
+    },
+	{
+      "data": "Search the name of a similar song"
+    },
+	{
+      "data": "I have song name could you please find the similar songs for me"
+    },
+	{
+      "data": "Search song name by song name"
+    },
+	{
+      "data": "Search songs by song name"
+    },
+	{
+      "data": "Find the name of a similar song"
+    },
+	{
+      "data": "Find a song name"
+    },
+	{
+      "data": "Match songs for me"
+    }
+  ]
+}

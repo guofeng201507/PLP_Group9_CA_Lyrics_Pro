@@ -1,0 +1,46 @@
+{
+  "Greeting": [
+    {
+      "data": "Hello"
+    },
+	{
+      "data": "Hi"
+    },
+	{
+      "data": "Ni Hao"
+    },
+	{
+      "data": "Hey"
+    },
+	{
+      "data": "How are you"
+    },
+	{
+      "data": "Hi there"
+    },
+	{
+      "data": "Hay"
+    },
+	{
+      "data": "Good morning"
+    },
+	{
+      "data": "Good afternoon"
+    },
+	{
+      "data": "Good evening"
+    },
+	{
+      "data": "How are you doing"
+    },
+	{
+      "data": "How you doing"
+    },
+	{
+      "data": "How do you do"
+    },
+	{
+      "data": "Greetings"
+    }
+  ]
+}

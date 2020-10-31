@@ -1,19 +1,19 @@
 {
   "MatchSong": [
     {
-      "data": "Find a song for me"
+      "data": "Find similar songs for me"
     },
 	{
-      "data": "Find a song by lyrics"
+      "data": "Find a similar song for me"
     },
 	{
-      "data": "Please find a song for me"
+      "data": "Please find a close song for me"
     },
 	{
-      "data": "I want to find a song by its lyrics"
+      "data": "I want to find a similar song by song name"
     },
 	{
-      "data": "Match a song by lyrics"
+      "data": "Match a song"
     },
 	{
       "data": "Match songs"
@@ -22,43 +22,43 @@
       "data": "Match song"
     },
 	{
-      "data": "Match lyrics"
+      "data": "Match similar songs"
     },
 	{
-      "data": "Search song by lyrics"
+      "data": "Search song by song name"
     },
 	{
-      "data": "Search a song by its lyrics"
+      "data": "Search songs by its similar song"
     },
 	{
-      "data": "I would like to get a song by its lyrics"
+      "data": "I would like to get a similar song"
     },
 	{
-      "data": "Get the song name for me"
+      "data": "Get the song names for me"
     },
 	{
-      "data": "Search the name of a song for me"
+      "data": "Search the name of similar songs for me"
     },
 	{
-      "data": "Search the name of a song"
+      "data": "Search the name of a similar song"
     },
 	{
-      "data": "I have lyrics for a song could you please find the song name for me"
+      "data": "I have song name could you please find the similar songs for me"
     },
 	{
-      "data": "Search song name by lyrics"
+      "data": "Search song name by song name"
     },
 	{
-      "data": "Search song by lyrics"
+      "data": "Search songs by song name"
     },
 	{
-      "data": "Find the name of a song"
+      "data": "Find the name of a similar song"
     },
 	{
       "data": "Find a song name"
     },
 	{
-      "data": "Match a song for me"
+      "data": "Match songs for me"
     }
   ]
 }
