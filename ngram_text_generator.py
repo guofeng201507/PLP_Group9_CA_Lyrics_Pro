@@ -42,8 +42,8 @@ def ngram_freqs(ngrams):
 def next_word(text, N, counts):
     """ Outputs the next word to add by using most recent tokens """
 
-    token_seq = SEP.join(text.split()[-(N - 1):]);
-    choices = counts[token_seq].items();
+    token_seq = SEP.join(text.split()[-(N - 1):])
+    choices = counts[token_seq].items()
 
     # make a weighted choice for the next_token
     # [see http://stackoverflow.com/a/3679747/2023516]
@@ -51,7 +51,7 @@ def next_word(text, N, counts):
     r = random.uniform(0, total)
     upto = 0
     for choice, weight in choices:
-        upto += weight;
+        upto += weight
         if upto > r: return choice
     assert False  # should not reach here
 
@@ -123,6 +123,6 @@ def train_ngram_model(corpus_file, pkl_file, N=3):
 if __name__ == "__main__":
     # ngram_model = train_ngram_model("ts_lyrics_train.csv", "ts_model_lyrics.pkl", 3)
 
-    model = load_ngram_model('ts_model_lyrics.pkl')
+    model = load_ngram_model('model_lyrics.pkl')
     input = 'we will never get back together'
     print(gengram_sentence(model, sentence_count=15, start_seq=input))
