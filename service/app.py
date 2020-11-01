@@ -155,6 +155,7 @@ def main():
                     final_list = filter_list.sort_values(by=[genre_final], ascending=False)
                     artist_list = final_list['artist'].values.tolist()
                     title_list = final_list['song_title'].values.tolist()
+                    tone_list = final_list['tone'].values.tolist()
                     url_list = final_list['url'].values.tolist()
                     list_size = 0
                     if len(title_list) > 5:
@@ -166,6 +167,7 @@ def main():
                     for i in range(list_size):
                         resp_msg += "Song name: *" + title_list[i] + "* \r\n"
                         resp_msg += "Artist name: " + artist_list[i] + " \r\n"
+                        resp_msg += "Tone: " + tone_list[i] + " \r\n"
                         resp_msg += "URL: " + url_list[i] + " \r\n"
                     context = ''
                     state = ''
