@@ -6,9 +6,9 @@ from twilio.twiml.messaging_response import MessagingResponse
 # from twilio.twiml.voice_response import Play, VoiceResponse
 from joblib import load
 from random import randrange
-import service.audio_process as ap
-import service.intent_classification as ic
-import service.ngram_text_generator as ntg
+import audio_process as ap
+import intent_classification as ic
+import ngram_text_generator as ntg
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
